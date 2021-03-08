@@ -10,7 +10,7 @@ void coutAccessibleFile(std::vector<std::string> &paths) {
 	for (size_t i = 0; i < paths.size(); i++)
 	{
 		std::filesystem::path entry = paths[i];
-		//This part defeats the nasty exceptions you that will occur due to not being able to access files
+		//This part defeats the nasty exceptions that will occur due to not being able to access files
 		_wfopen_s(&pFile, entry.wstring().c_str(), L"r");
 		if (pFile != NULL) {
 			fclose(pFile);
